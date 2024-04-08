@@ -3,7 +3,7 @@
 #include<stdlib.h>
 int main()
 {
- int num,a[60],i,iteam,j;
+ int num,a[60],i,item,j;
  
  printf("\n How many array elements of repeat: ");
  scanf("%d",&num);
@@ -48,14 +48,14 @@ exit(0);
 printf("================================================\n");
 
  printf("\n Enter the Searching elements: ");
- scanf("%d",&iteam);
+ scanf("%d",&item);
  
  for(i=0;i<num;i++)
  {
- 	if(a[i]==iteam)
+ 	if(a[i]==item)
  	{
  		printf("\n================================================\n");	
-		printf("\n [Iteam found at:  %d]",i);
+		printf("\n [ Iteam found at:  %d index ]",i);
  		exit(0);
 	}
 }
