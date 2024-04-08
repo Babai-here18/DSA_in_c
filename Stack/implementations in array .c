@@ -3,7 +3,7 @@
 #define array_size 5
 int stack[array_size]; 
 int top=-1;  
-void push( int iteam)
+void push( int item)
 {
 	if(top==array_size-1)
 	{
@@ -11,8 +11,8 @@ void push( int iteam)
 	}
 	else
 	{
-		stack[++top]=iteam; 
-		printf("\n [%d] Iteam Inserted..\n",iteam);
+		stack[++top]=item; 
+		printf("\n [%d] Item Inserted..\n",item);
 	}	
 }
 
@@ -23,8 +23,8 @@ void pop()
 		printf("\n [ **Underflow & Exit** ]\n");
 	}
 	else {
-	int iteam = stack[top--];
-	printf("\n [%d] Iteam Deleted..\n",iteam);	
+	int item = stack[top--];
+	printf("\n [%d] Item Deleted..\n",item);	
 	}
 }
 
@@ -50,7 +50,7 @@ void display()
 
 int main()
 {
-	int choice,iteam;
+	int choice,item;
 	printf("\n 1.push\n 2.pop\n 3.Display\n 4.Exit");
 	 printf("\n================================================\n");
 	while(1)
@@ -63,8 +63,8 @@ int main()
 		 {
 		 case 1:
 		printf("\n Enter valu  to push : ");
-		scanf("%d",&iteam);
-		push(iteam);
+		scanf("%d",&item);
+		push(item);
 		break;
 		case 2: 
 		pop();
