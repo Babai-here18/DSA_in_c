@@ -37,7 +37,7 @@ void display()
 	}
 	else
 	{
-		printf("\n Stack elements:--> ");
+		printf("\n [Stack elements]:-->\t           [ Top = %d ] \n",top);
 		printf("\n================================================\n");
 	for(i=0; i<=top; i++)
 	{
@@ -47,11 +47,23 @@ void display()
 	}
 
 }
+int Peek()
+{
+    if(top >= 0)
+    {
+        return stack[top];
+    }
+else
+{
+    return -1;
+}
+
+}
 
 int main()
 {
 	int choice,item;
-	printf("\n 1.push\n 2.pop\n 3.Display\n 4.Exit");
+	printf("\n 1.push\n 2.pop\n 3.Display\n 4.Peek\n 5.Exit");
 	 printf("\n================================================\n");
 	while(1)
 	{
@@ -73,7 +85,17 @@ int main()
 		display();
 		break;
 		case 4:
-		return 0;
+        if(Peek()==-1)
+        {
+           printf("\n Exception from Peek! Empty Stack...!\n");
+        }
+        else{
+            printf("\n Top Of Stack: %d \n",Peek());
+        }
+        break;
+        case 5:
+        return 0;
+        break;
 		default:
 		printf("\n [ **Invaild choice** ]\n");
 		
