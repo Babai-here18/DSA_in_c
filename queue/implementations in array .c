@@ -12,8 +12,8 @@ int main()
     while(1)
     {
         printf("\nEnter Your Choice: ");
-        scanf("%d",&choice);//1
-        switch (choice) //1
+        scanf("%d",&choice);
+        switch (choice) 
         {
         case 1:
         if(rear == size-1) 
@@ -51,6 +51,7 @@ int main()
                 front++;
             }
             printf("\n [%d] Item Deleted..\n",item);
+            
         }
         break;
         case 3:
@@ -59,6 +60,8 @@ int main()
             printf("\n [ **The Queue is empty** ] \n");
         }
         else{
+            printf("\n-------------------------------------");
+            printf("\n Fornt:- %d || Rear:- %d\n-------------------------------------",front,rear);
             printf("\n Queue Elements :-->");
             printf("\n=============================================================\n");
             for (int i = front; i <= rear ; i++)
@@ -69,11 +72,11 @@ int main()
         }
         break;
         case 4:
+        printf("\n[ Thank you...): ]\n");
         return 0; 
         break;
     default:
         printf("\n [ **Invaild choice** ]\n");
-        break;
         }
     }
    
