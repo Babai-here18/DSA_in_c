@@ -1,12 +1,14 @@
-                                         // -: Circular Queue implementation in array :-
+                                      // -: Circular Queue implementation in array :-
 #include<stdio.h>
 int isfull();
 int isempty();
 int dequeue();
 void enqueue(int);
 void display();
+
 int cq[5]={0};
 int rear=-1,front=-1;
+
 int main() 
 {
     int ch,user,a;
@@ -53,8 +55,9 @@ int main()
         goto repeat;
         }
     } 
-        while(ch!=5);
+    while(ch!=5);
 }  
+
 
 
 int isfull()
@@ -64,6 +67,9 @@ int isfull()
     else
     return 0; 
 }
+
+
+
 int isempty()
 {
     if(front == -1)
@@ -72,6 +78,9 @@ int isempty()
     return 0;
 
 }
+
+
+
 void enqueue(int x)
 {
     if(front == -1)
@@ -88,6 +97,9 @@ void enqueue(int x)
     cq[rear]=x;
     printf("\n [%d] Item Inserted...):\n",x);
 }
+
+
+
 int dequeue()
 {
     int x=0;
@@ -106,6 +118,8 @@ int dequeue()
 return x;
      
 }
+
+
 
 void display()
 {
