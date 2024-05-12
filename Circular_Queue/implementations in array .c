@@ -12,9 +12,10 @@ int rear=-1,front=-1;
 int main() 
 {
     int ch,user,a;
-    do{
-     repeat:
-       printf("\n================================================\n");
+    
+   while(1)
+   {
+    printf("\n================================================\n");
     printf("1.Enqueue\n2.Dequeue\n3.Display\n4.Exit");
     printf("\n================================================\n");
         printf("\n Enter Your Choice:- ");
@@ -37,7 +38,7 @@ int main()
             else
             {
                 a=dequeue();
-                 printf("\n [%d] Item Deleted...):\n",a);
+                 printf("\n [%d] Element is Deleted...):\n",a);
             }
             break;
             case 3:
@@ -52,10 +53,10 @@ int main()
             break;
             default:
             printf("\n\t\t[ **Invaild choice** ]\n");
-        goto repeat;
         }
-    } 
-    while(ch!=5);
+   }
+   return 0;   
+       
 }  
 
 
@@ -95,7 +96,7 @@ void enqueue(int x)
         rear=rear+1;
     }
     cq[rear]=x;
-    printf("\n [%d] Item Inserted...):\n",x);
+    printf("\n [%d] Element is Inserted...):\n",x);
 }
 
 
