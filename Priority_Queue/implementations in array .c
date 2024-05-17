@@ -62,7 +62,7 @@ return 0;
 void Ascending_Order()
 {
 int ch,ele,priority,hp,dhp;
-printf("\n\t<--- Ascending Order ---> ");
+printf("\n\n\t<--- Ascending Order ---> ");
 while (1)
 {
    printf("\n================================================\n");
@@ -218,7 +218,7 @@ void  Descending_Order()
 {
 
 int ch,ele,priority,hp,dhp;
-printf("\n\t<--- Descending Order ---> ");
+printf("\n\n\t<--- Descending Order ---> ");
 while (1)
 {
    printf("\n================================================\n");
