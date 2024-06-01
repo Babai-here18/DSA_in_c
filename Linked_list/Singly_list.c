@@ -14,13 +14,12 @@ struct node
 void create ();
 void beginsert();
 void lastinsert();
-void random_insert_after();
 void random_insert_before();
+void random_insert_after();
 void begin_delete();
 void last_delete();
 void random_delete();
 void search();
-void create ();
 void display();
 /* ---------------------------------------------------------------------------------------------------- */
                                     // Start main() function :----->                                   
@@ -228,7 +227,7 @@ void random_insert_before()
     {
     printf("\n Enter the Valu: ");
     scanf("%d",&num);
-    printf("\n Enter the value of The node which has to be deleted: ");
+    printf("\n Enter the value of The node which has to be Inserted: ");
     scanf("%d",&val);
     while(temp != NULL)
     {
@@ -289,7 +288,7 @@ else{
 
     printf("\n Enter the Valu: ");
     scanf("%d",&num);
-    printf("\n Enter the value of The node which has to be deleted: ");
+    printf("\n Enter the value of The node which has to be Inserted: ");
     scanf("%d",&val);
      while(temp != NULL)
     {
