@@ -1,4 +1,4 @@
-                                // -: Singly --> Linked --> List :-
+                                 // -: Singly --> Linked --> List :-
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -11,18 +11,19 @@ struct node
 }; struct node *head, *current; // Global structure pointer variable------->
 
 // All function declaration--------->
-void create ();
-void beginsert();
-void lastinsert();
-void random_insert_before();
-void random_insert_after();
-void begin_delete();
-void last_delete();
-void random_delete();
-void search();
-void display();
+void create (); // function---> 1
+void beginsert(); // function---> 2
+void lastinsert(); // function---> 3
+void random_insert_before(); // function---> 4
+void random_insert_after(); // function---> 5
+void begin_delete(); // function---> 6
+void last_delete(); // function---> 7
+void random_delete(); // function---> 8
+void search(); // function---> 9
+void display(); // function---> 10
+
 /* ---------------------------------------------------------------------------------------------------- */
-                                    // Start main() function :----->                                   
+                                 // <--------- Start main() function --------->                                  
 int main()
 {
     int choice = 0;
@@ -75,10 +76,13 @@ int main()
             printf("\n\t\t[ **Invaild choice** ]\n");
         }
     }
+
     return 0;
 }
 
-// All function definition--------->
+                         // <--------- All function definition --------->
+
+// function---> 1
 
 void create ()
 {
@@ -147,7 +151,7 @@ printf("\n\t[%d] Elements nodes Create is Successful...!",num);
 
 
 
-
+// function---> 2
 
 void beginsert()
 {
@@ -172,7 +176,7 @@ void beginsert()
 
 
 
-
+// function---> 3
 
 void lastinsert()
 {
@@ -211,7 +215,7 @@ void lastinsert()
 
 
 
-
+// function---> 4
 
 void random_insert_before()
 {
@@ -270,7 +274,7 @@ else{
 
 
 
-
+// function---> 5
 
 void random_insert_after()
 {
@@ -329,7 +333,7 @@ printf("\n\t[**Iteam not Found**]\n");
 
 
 
-
+// function---> 6
 
 void begin_delete()
 {
@@ -349,7 +353,7 @@ void begin_delete()
 
 
 
-
+// function---> 7
 
 void last_delete()
 {
@@ -380,7 +384,7 @@ void last_delete()
 
 
 
-
+// function---> 8
 
 void random_delete()
 {
@@ -452,7 +456,7 @@ else
 
 
 
-
+// function---> 9
 
 void search()
 {
@@ -497,7 +501,7 @@ void search()
 
 
 
-
+// function---> 10
 
 void display()
 {
@@ -519,4 +523,4 @@ void display()
     }
 }
 
-                                    // program End....(" Thank You ")--------->
+                             //  <--------- program End....(" Thank You ") --------->
