@@ -18,9 +18,9 @@ void begin_delete();  // function---> 6
 void last_delete();  // function---> 7
 void random_delete();  // function---> 8
 void search();  // function---> 9
-void all_nodes_dele();  // function---> 10
-void sorted();  // function---> 11
-void display(); // function---> 12
+void sorted();  // function---> 10
+void all_nodes_dele();  // function---> 11
+void display();  // function---> 12
 
 /* ---------------------------------------------------------------------------------------------------- */
                                 // <--------- Start main() function --------->       
@@ -90,6 +90,8 @@ int choice;
 
 
 
+
+                                    
 // function---> 1
 
 void create ()  
@@ -699,51 +701,7 @@ void search()
 
 
 
-// function---> 10
-
-void  all_nodes_dele()
-{
-
-if(head == NULL)
-{
-    printf("\n\t[**List is empty**]\n");
-}
-
-
-else{
-
- while(head != NULL)
-    {
-    
-struct node *ptr=head, *preptr,*temp=head;
-    
- if(temp->next==head)
-    {
-        free(head);
-        head=NULL;
-     printf("\n\t [**All Node Deleted is Successful**] \n");
-        return;
-    }
-
-else{
-      
-        while(ptr->next != head)
-         {
-            preptr=ptr;
-            ptr=ptr->next;
-         }
-        preptr->next=ptr->next;
-        free(ptr);
-}
-}
-}   
-}
-
-
-
-
-
-// function---> 11 
+// function---> 10 
 
 void sorted()
 {
@@ -787,6 +745,49 @@ printf("\n\t[%d] Item is inserted\n",newnode->data);
 }
 }
 
+
+
+
+
+// function---> 11
+
+void  all_nodes_dele()
+{
+
+if(head == NULL)
+{
+    printf("\n\t[**List is empty**]\n");
+}
+
+
+else{
+
+ while(head != NULL)
+    {
+    
+struct node *ptr=head, *preptr,*temp=head;
+    
+ if(temp->next==head)
+    {
+        free(head);
+        head=NULL;
+     printf("\n\t [**All Node Deleted is Successful**] \n");
+        return;
+    }
+
+else{
+      
+        while(ptr->next != head)
+         {
+            preptr=ptr;
+            ptr=ptr->next;
+         }
+        preptr->next=ptr->next;
+        free(ptr);
+}
+}
+}   
+}
 
 
 

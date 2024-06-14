@@ -20,7 +20,8 @@ void begin_delete(); // function---> 6
 void last_delete(); // function---> 7
 void random_delete(); // function---> 8
 void search(); // function---> 9
-void display(); // function---> 10
+void all_node_del(); // function---> 10 
+void display(); // function---> 11
 
 /* ---------------------------------------------------------------------------------------------------- */
                                  // <--------- Start main() function --------->                                  
@@ -31,7 +32,7 @@ int main()
     {
         printf("\n========================================================================");
         printf("\n\t <-------Choose One Option from the following List-------> \n");
-        printf("\n0.create\nl.Insert in begining\n2.Insert at last\n3.Insert a node before a given node--->(But first node is not feasible!!)\n4.Insert a node after a given node\n5.Delete from Beginning\n6.Delete from last\n7.Delete item from any Elements\n8.Search \n9.Display\n10.Exit\n");
+        printf("\n0.create\nl.Insert in begining\n2.Insert at last\n3.Insert a node before a given node\n4.Insert a node after a given node\n5.Delete from Beginning\n6.Delete from last\n7.Delete item from any Elements\n8.Search\n9.Display\n10.All Nodes Deleted\n11.Exit\n");
         printf("========================================================================\n");
         printf("\nEnter your choice: ");
         scanf("\n%d", &choice);
@@ -69,6 +70,10 @@ int main()
         display();
         break;
         case 10:
+        all_node_del();
+        printf("\n\t [**All Node Deleted is Successful**] \n");
+        break;
+        case 11:
         printf("\n[ Thank you...): ]\n");
         exit(0);
         break;
@@ -81,6 +86,11 @@ int main()
 }
 
                          // <--------- All function definition --------->
+
+
+
+
+
 
 // function---> 1
 
@@ -122,7 +132,7 @@ printf("\n\t[%d] Elements nodes Create is Successful...!",num);
 
 
 else{
-
+current = head;
 while(current->next != NULL)
 {
     current = current->next;
@@ -151,6 +161,8 @@ printf("\n\t[%d] Elements nodes Create is Successful...!",num);
 
 
 
+
+
 // function---> 2
 
 void beginsert()
@@ -173,6 +185,9 @@ void beginsert()
         printf("\n\t[%d] Item is inserted\n",head->data);
     }
 }
+
+
+
 
 
 
@@ -215,13 +230,15 @@ void lastinsert()
 
 
 
+
+
 // function---> 4
 
 void random_insert_before()
 {
-    struct node *newnode,*ptr,*preptr,*temp=head;
+    struct node *newnode,*ptr,*preptr,*temp=head,*newnode_ex;
     newnode=(struct node *)malloc(sizeof(struct node *));
-    int num,val,flag;
+    int num,val,flag,ex;
       if (head == NULL)
     {
        printf("\n\t[**List is empty**]\n");
@@ -235,12 +252,18 @@ void random_insert_before()
     scanf("%d",&val);
     while(temp != NULL)
     {
+        ex = temp->data;
         if(temp->data == val)
         {
             flag=1;
             break;
         }
-
+        else if (ex == val)
+        {
+            flag = 1;
+            break;;
+        }
+        
         else{
             flag=2;
         }
@@ -251,6 +274,18 @@ void random_insert_before()
 if(flag == 1)
 {
     
+    if(head->data == val)
+    {
+
+        newnode_ex=(struct node *)malloc(sizeof(struct node *));
+        newnode_ex->data = num;
+        newnode_ex->next = head;
+        head = newnode_ex;
+        printf("\n\t[%d] Item is inserted\n",newnode_ex->data);
+    }
+
+ else{
+
     ptr = head;
     while(ptr->data != val )
     {
@@ -262,6 +297,8 @@ if(flag == 1)
     newnode->next=ptr;
     preptr->next=newnode;
     printf("\n\t[%d] Item is inserted\n",newnode->data);
+
+}
 }
 
 else{
@@ -274,12 +311,14 @@ else{
 
 
 
+
+
 // function---> 5
 
 void random_insert_after()
 {
-    int num,val,flag;
-    struct node *newnode, *ptr=head,*preptr,*temp=head;
+    int num,val,flag,ex;
+    struct node *newnode,*newnode_ex,*ptr=head,*preptr,*temp=head;
     newnode=(struct node*)malloc(sizeof(struct node *));
 
     if (head == NULL)
@@ -296,12 +335,18 @@ else{
     scanf("%d",&val);
      while(temp != NULL)
     {
+        ex=temp->data;
         if(temp->data == val)
         {
             flag=1;
             break;
         }
-
+        else if (ex == val)
+        {
+            flag = 1;
+            break;
+        }
+        
         else{
             flag=2;
         }
@@ -311,6 +356,17 @@ else{
 
 if(flag == 1)
 {
+
+    if(ptr->data == val)
+    {
+     newnode_ex = (struct node*)malloc(sizeof(struct node *));
+     newnode_ex->data = num;
+     newnode_ex->next = ptr->next;
+     ptr->next = newnode_ex;
+     printf("\n\t[%d] Item is inserted\n",newnode_ex->data);
+    }
+
+    else{
 
     while(preptr->data != val)
     {
@@ -322,14 +378,16 @@ if(flag == 1)
     preptr->next=newnode;
     printf("\n\t[%d] Item is inserted\n",newnode->data);
     }
+    }
 
 else{
-
 printf("\n\t[**Iteam not Found**]\n");
 
 }
 }
 }
+
+
 
 
 
@@ -353,11 +411,13 @@ void begin_delete()
 
 
 
+
+
 // function---> 7
 
 void last_delete()
 {
-    struct node *ptr, *ptrl;
+    struct node *ptr=head, *preptr;
     if (head == NULL)
     {
       printf("\n\t[**List is empty**]\n");
@@ -370,17 +430,19 @@ void last_delete()
     }
     else
     {
-        ptr = head;
+
         while (ptr->next != NULL)
         {
-            ptrl = ptr;
+            preptr = ptr;
             ptr = ptr->next;
         }
-        ptrl->next = NULL;
+        preptr->next = NULL;
         printf("\n\t[%d] Item deleted from the endining\n",ptr->data);
         free(ptr);
     }
 }
+
+
 
 
 
@@ -456,6 +518,8 @@ else
 
 
 
+
+
 // function---> 9
 
 void search()
@@ -501,7 +565,37 @@ void search()
 
 
 
+
+
 // function---> 10
+
+void all_node_del() 
+{
+
+struct node *ptr;
+if(head == NULL)
+{
+    printf("\n\t[**List is empty**]\n");
+}
+
+
+else{
+
+ while(head != NULL)
+{
+   
+        ptr = head;
+        head = head->next;
+        free(ptr);
+}
+}   
+}
+
+
+
+
+
+// function---> 11
 
 void display()
 {
