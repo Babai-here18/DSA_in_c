@@ -71,10 +71,10 @@ int main()
         break;
         case 10:
         all_node_del();
-        printf("\n\t [**All Node Deleted is Successful**] \n");
         break;
         case 11:
-        printf("\n[ Thank you...): ]\n");
+         printf("\n\t\t[ Thank you...): ]\n");
+        printf("========================================================================\n");
         exit(0);
         break;
         default:
@@ -569,26 +569,38 @@ void search()
 
 // function---> 10
 
-void all_node_del() 
+void all_node_del()
 {
 
-struct node *ptr;
-if(head == NULL)
-{
-    printf("\n\t[**List is empty**]\n");
+    struct node *ptr;
+    if(head == NULL)
+    {
+        printf("\n\t[**List is empty**]\n");
+
+    }
+
+    else
+    {
+    
+        while(head != NULL)
+        { 
+
+    if(head->next == NULL)
+    {
+    free(head);
+    head=NULL;
+    printf("\n\t [**All Node Deleted is Successful**] \n");
+    return;
+    }
+    
+    else
+    {
+    ptr = head;
+    head = head->next;
+    free(ptr);
 }
-
-
-else{
-
- while(head != NULL)
-{
-   
-        ptr = head;
-        head = head->next;
-        free(ptr);
 }
-}   
+}
 }
 
 
@@ -617,4 +629,4 @@ void display()
     }
 }
 
-                             //  <--------- program End....(" Thank You ") --------->
+                            //  <--------- program End....(" Thank You ") --------->

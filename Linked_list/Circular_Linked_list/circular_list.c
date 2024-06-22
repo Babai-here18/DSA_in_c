@@ -12,8 +12,8 @@ struct node
 void create (); // function---> 1
 void beginsert(); // function---> 2
 void lastinsert(); // function---> 3
-void random_insert_after();  // function---> 4
-void random_insert_before(); // function---> 5
+void random_insert_before();  // function---> 4
+void random_insert_after(); // function---> 5
 void begin_delete();  // function---> 6
 void last_delete();  // function---> 7
 void random_delete();  // function---> 8
@@ -75,7 +75,8 @@ int choice;
         all_nodes_dele();
         break;
         case 12:
-        printf("\n[ Thank you...): ]\n");
+        printf("\n\t\t[ Thank you...): ]\n");
+        printf("========================================================================\n");
         exit(0);
         default:
             printf("\n\t\t[ **Invaild choice** ]\n");
@@ -810,15 +811,15 @@ void display()
       while(ptr->next != head)
     {
 
-        printf("%d -> ",ptr->data);
+        printf("%d --> ",ptr->data);
 
         ptr = ptr->next;
     
     }
-    printf("%d\n",ptr->data);
+    printf("%d --> NULL\n",ptr->data);
     return;
     }
 }
 
                                        
-                                  //  <--------- program End....(" Thank You ") --------->
+                              //  <--------- program End....(" Thank You ") --------->
